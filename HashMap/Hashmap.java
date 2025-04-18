@@ -50,11 +50,22 @@
 // Finding the Index : the hash code is used to find the index of the bucket where the key-value pair is stored.
 // Searching in the Bucket: Once th correct bucket is  found, it checks for the key in that bucket. if it finds the key, it returns the associated the associated value.
 
+
+
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class Hashmap {
+    public static int simpleHash(String key) {
+        int sum = 0;
+        for (char c : key.toCharArray()) {
+            sum += (int) c;
+        }
+        return sum % 10;
+    }
     public static void main(String[] args) {
         HashMap<Integer, String> map = new HashMap <>();
         map.put(3, "shubham");
@@ -83,6 +94,40 @@ public class Hashmap {
         boolean res = map.remove(31, "nitin");
         System.out.println("Removed ?"+res);
         System.out.println(map);
-    }
-    
+
+        List<Integer> list = Arrays.asList(2, 4, 32, 43, 4, 432);   
+        list.contains(32);                                               //it is slow because it is O(n) time complexity.
+        // HashMap is faster because it is O(1) time complexity.
+     // hash function accept inputs and gives  output in between these, the hash funtion has hash code through which input is stored(these inpute is stored in
+        // array form) by the indexed based. 
+        System.out.println(simpleHash("ABC"));      //In both case, the hash has same code. so it will collides in the array (index). 
+        System.out.println(simpleHash("CBA"));      // In every index of array there is linked list through which collision is sorted
+    } 
 }
+
+// HANDLING COLLISIONS
+// Since different keys can generate the  same index(called a collision), HashMap uses a technique to handle this situation.java's HashMap uses Linked lists(or balanced binary search trees
+//  after java 8) for this. if the entry of the input cross the threshold then it convert linked list to red black tree or balanced binary search tree because linked list takes O(n) for linear search
+// where as it takes log(n). threshold is 8.
+// If multiple key-value pairs map to the same bucket, they are stored in linked list inside the bucket.
+// when a key-value pair is retrieved, the HashMap traverses linked list , checking each key until it finds a match.
+
+
+//map.put("apple",50);
+//map.put("banana",30);
+//map.put("orange",80);
+// let's say apple and orange end up in the same bucket due to a hash collision. they will be stored in a linked list in that bucket:
+// Bucket5: ("apple",50)->("orange",80)
+// when we do map.get("orange"), HashMap will go to Bucket 5 and then traverse the linked list to find the entry with the key "orange".
+
+// HashMap Resizing (Rehashing)
+// HashMap has an internal array size, which by default is 16.
+// when the number of element (key-value pairs ) grows and exceeds a certain load factor( dafault is 0.75), HashMap automatically resizes the array to hold more data
+// this process is called rehashing .
+// The default size of th array is 16, so when more than 12 element (16*0.75) are inserted, the HashMap will resize.
+
+// During  rehashing
+// the array size is doubled.
+// 1. All existing entries are rehashed (i.e., their positions are recalculated) are placed into the new array.
+// 2. This ensures the HashMap continues to perform efficiently even as more data is added.
+
