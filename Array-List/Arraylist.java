@@ -16,39 +16,39 @@ import java.util.List;
 
 public class Arraylist{
     public static void main(String args[]){
-        // ArrayList<Integer> list = new ArrayList<>();
-        // list.add(1);
-        // list.add(4);
-        // list.add(50);
-        // System.out.println(list.get(2));
-        // System.out.println(list.size());
-        // for(int i=0; i<=list.size(); i++){      // I is used as a pointer 
-        //     System.out.println(list.get(i));
-        // }
-        // for(int x: list){                      // x is itself the element of the collections and x is integer here. 
-        //     System.out.println(x);
-        // }
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(4);
+        list.add(50);
+        System.out.println(list.get(2));
+        System.out.println(list.size());
+        for(int i=0; i<=list.size(); i++){      // I is used as a pointer 
+            System.out.println(list.get(i));
+        }
+        for(int x: list){                      // x is itself the element of the collections and x is integer here. 
+            System.out.println(x);
+        }
         
-        // System.out.println(list.contains(4));       // we can check the existence of the elements.
-        // System.out.println(list.contains(500));
+        System.out.println(list.contains(4));       // we can check the existence of the elements.
+        System.out.println(list.contains(500));
 
-        // list.remove(2);                     //we can remove the elements.
-        // for(int y: list){
-        //     System.out.println(y);
-        // }
-        //   list.remove(Integer.valueOf(4));   // remove by object
-        //   System.out.println(list);
+        list.remove(2);                     //we can remove the elements.
+        for(int y: list){
+            System.out.println(y);
+        }
+          list.remove(Integer.valueOf(4));   // remove by object
+          System.out.println(list);
 
-        // we can add the elements without replacing the element 
-        // list.add(2,90);
-        // for(int y: list){
-        //     System.out.println(y);
-        // }
+       // we can add the elements without replacing the element 
+        list.add(2,90);
+        for(int y: list){
+            System.out.println(y);
+        }
          
-        // list.set(2, 40);        //Here we are replacing the element by adding other elements using set method
-        // for(int y: list){
-        //     System.out.println(y);
-        // } 
+        list.set(2, 40);        //Here we are replacing the element by adding other elements using set method
+        for(int y: list){
+            System.out.println(y);
+        } 
 
         // Internal Working
         //Unlike a regular array, which has fixed size, an Arraylist can grow and shrink as elements are added or removed. This dynamic resizing is 
@@ -63,33 +63,33 @@ public class Arraylist{
 
         // CREATING AN ARRAYLIST
         //Default constructor, creates an empty ArrayList with an initial capacity of 10
-        // ArrayList<String> list1= new ArrayList<>();
+        ArrayList<String> list1= new ArrayList<>();
 
         //creating an ArrayList with a specified initial capacity
-        // ArrayList <String> listwithcapacity = new ArrayList<>(20);
+        ArrayList <String> listwithcapacity = new ArrayList<>(20);
 
         //creating an ArrayList from another collection
-        // List<String> list2 = Arrays.asList("Apple","Banana","Orange");       //we cannot modify the list expect replace the element using set method.
-        // String arr[] = {"Apple","Banana","Orange"};
-        // ArrayList<String> list3 = new ArrayList<>(list2);                        //we can modify the element and we can also use the arr[].
-        // list3.add("CHERRY");
-        // System.out.println(list3);
+        List<String> list2 = Arrays.asList("Apple","Banana","Orange");       //we cannot modify the list expect replace the element using set method.
+        String arr[] = {"Apple","Banana","Orange"};
+        ArrayList<String> list3 = new ArrayList<>(list2);                        //we can modify the element and we can also use the arr[].
+        list3.add("CHERRY");
+        System.out.println(list3);
 
-        // In new version of java we can use List.of
-        // List<Integer> list5 = List.of(1,3,4,5,6,7);          //everything is fixed
+        //In new version of java we can use List.of
+        List<Integer> list5 = List.of(1,3,4,5,6,7);          //everything is fixed
 
-        // Converting to Array
-        // ArrayList<Integer> list7 = new ArrayList<>();
-        // list7.add(1);
-        // list7.add(60);
-        // list7.add(50);
-        // Integer array[] = list7.toArray(new Integer[0]);            // it creates new array of type Integer with size 0.
+        //Converting to Array
+        ArrayList<Integer> list7 = new ArrayList<>();
+        list7.add(1);
+        list7.add(60);
+        list7.add(50);
+        Integer array[] = list7.toArray(new Integer[0]);            // it creates new array of type Integer with size 0.
 
         //Sorting an ArrayList
-        // Collections.sort(list7);   //sorts in natural order
-        // System.out.println(list7);
+        Collections.sort(list7);   //sorts in natural order
+        System.out.println(list7);
 
-        // Comparator is a concept or Interface using this we can write own logic for Sorting.
+        //Comparator is a concept or Interface using this we can write own logic for Sorting.
         
 
 
