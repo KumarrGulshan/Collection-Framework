@@ -1,0 +1,88 @@
+what is collection?
+A Collection is simply an object that represents a group of objects, known as its elements. 
+
+What is a collection framework?
+It provides a set of interfaces and classes that help in managing grops of objects. 
+
+Before the introduction of the collection framework in JDk 1.2, java used to rely on a variety
+of classes like vector, stack, Hashtable and arrays to store and manipulate groups of objects.
+    However , these classes had several drawbacks
+     1. Inconsistency: each class had a different way fo managing collections,leading to confusion
+         and a steep learning curve.  
+     2. Lack of inter-operability: These classes were not designed to work together seamlessly.
+     3. No common interface:There was no common interface for all these classes, which meant 
+         you couldn't write generic algorithm that could operate on different types of collection.
+       
+              TO SOLVE THESE PROBLEMS, the collection framework was introduced.
+     
+     1. Unified architecture : A consistent set of interface for all collections.
+     2. Inter-operability: Collections can be easily interchanged and manipulate in a uniform way.
+     3. Reuseability: Generic algorithms can be written that work with any collection.
+     4. Efficiency: The framework provides efficients algorithm for basic operation like searching
+        sorting,and manipulation.
+   
+                    Key interface in the Collection Framework
+         ( The collection framwork is primrily built around a set of interfaces.)
+     1.Collection: the root interface for all other collection types.
+     2.LIST : An ordered collection that can contain duplicate elements.(arraylist,linkedlist)
+     3. Set: A collection that cannot contain duplicate elements(hasSet,TreeSet)
+     4.Queue : A collection designed for holding elements prior to processing(prorityQueue,
+                                         linkedlist when used as a queue)
+     5.Deque : A double-ended queue that allows insertion and removal from both ends(arrayDeque)
+     6.Map: An interface that represents a collection of key-value paires(HashMap,Treemap)
+
+                         COLLECTION HIERARCHY	
+  The collection framework is organized into hierarchy where the core interfaces are the the top
+  and the sprecific imprementations extend these interfaces.  
+
+                                  Iterable
+                 
+                                 collection
+  
+ LIST                              SET                                   QUEUE
+
+Arraylist                         HashSet                              LinkedList
+linkedlist                        LinkedHashSet                        PriorityQueue
+vector                            TreeSet                              DeQue                      
+stack                             EnumSet                              ConcurrentLinkedQueue
+copyOnWriteArrayList              ConcurrentSkitpListSet 
+                                  SortedSet         
+                                  copyOnWriteArraySet        
+       
+                                
+                     DeQue is divided into three types
+                       1.ArrayDeQue
+                       2.LinkedList
+                       3.ConcurrentLinked Deque     
+
+ Collection and iterable framework are root interface of java collection framework. It is most
+basic interface that defines a group of objects known as elements. The collection interface is a
+a part of the java.utile package, and it is a parent interface that is extended by other collection 
+interface by other collection interfaces like List, Set,and Queue.
+
+Since collection is an interface, it cannot be instantiated directly; rather, it provides a bluprint for the 
+basic opereations that are common to all collections.
+The collection interface defines a set of core method that are implemented by all classes that 
+implement by all classes that implement the interface.These method allow for basic operation such 
+adding,removing and checking the existence of elements in a collection.
+
+                                   MAP
+In java, a Map is an object that maps keys to values. It cannot contain dublicate keys,and each key can map to
+ at most one value. Think of it as directionary where you look up a word (key) to find its definition(value). 
+ eg: In dictionay, every word has meaning. Here word is the key and meaning of that word is value.
+Map doest not extend the Collection interface
+ 
+	Key characteristic of the Map interface 
+Key-Value Pair: Each entry in a map consists of a key and a value.
+Unique Keys: No two entries can have the same key.
+One Value per key: Each key maps to a single value.
+Order: Some implementations maintain insertion order (LinkedHashMap),natural order (TreeMaP), or no order (HashMap).
+
+                                  Map(Separate Interface)
+          
+        HashMap           Hashtable      SortedMap        ConcurrentMap     enum
+                           (legacy)
+    LinkedHashMap                         TreeMap           concurrentHashMap
+    WeakHashMap                        NavigableMap           ConcurrentSkipListMap
+    IdentityHashMap        
+                 
